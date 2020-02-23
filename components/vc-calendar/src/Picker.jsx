@@ -6,18 +6,18 @@ import createChainedFunction from '../../_util/createChainedFunction';
 import KeyCode from '../../_util/KeyCode';
 import placements from './picker/placements';
 import Trigger from '../../vc-trigger';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { setTimeout } from 'timers';
-function isMoment(value) {
+function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || moment.isMoment(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
     );
   } else {
-    return value === undefined || moment.isMoment(value);
+    return value === undefined || dayjs.isDayjs(value);
   }
 }
-const MomentType = PropTypes.custom(isMoment);
+const DayjsType = PropTypes.custom(isDayjs);
 const Picker = {
   props: {
     animation: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -33,8 +33,8 @@ const Picker = {
     defaultOpen: PropTypes.bool.def(false),
     prefixCls: PropTypes.string.def('rc-calendar-picker'),
     placement: PropTypes.any.def('bottomLeft'),
-    value: PropTypes.oneOfType([MomentType, PropTypes.arrayOf(MomentType)]),
-    defaultValue: PropTypes.oneOfType([MomentType, PropTypes.arrayOf(MomentType)]),
+    value: PropTypes.oneOfType([DayjsType, PropTypes.arrayOf(DayjsType)]),
+    defaultValue: PropTypes.oneOfType([DayjsType, PropTypes.arrayOf(DayjsType)]),
     align: PropTypes.object.def({}),
     dropdownClassName: PropTypes.string,
   },

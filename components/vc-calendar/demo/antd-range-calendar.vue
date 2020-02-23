@@ -12,19 +12,19 @@ import BaseMixin from '@/components/_util/BaseMixin';
 
 import RangeCalendar from '../src/RangeCalendar';
 
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/en-gb';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import 'dayjs/locale/en-gb';
 
 const cn = window.location.search.indexOf('cn') !== -1;
 
 if (cn) {
-  moment.locale('zh-cn');
+  dayjs.locale('zh-cn');
 } else {
-  moment.locale('en-gb');
+  dayjs.locale('en-gb');
 }
 
-const now = moment();
+const now = dayjs();
 if (cn) {
   now.utcOffset(8);
 } else {
@@ -35,9 +35,7 @@ const defaultCalendarValue = now.clone();
 defaultCalendarValue.add(-1, 'month');
 
 const timePickerElement = h => (
-  <TimePickerPanel
-    defaultValue={[moment('00:00:00', 'HH:mm:ss'), moment('23:59:59', 'HH:mm:ss')]}
-  />
+  <TimePickerPanel defaultValue={[dayjs('00:00:00', 'HH:mm:ss'), dayjs('23:59:59', 'HH:mm:ss')]} />
 );
 
 function newArray(start, end) {
@@ -49,7 +47,7 @@ function newArray(start, end) {
 }
 
 function disabledDate(current) {
-  const date = moment();
+  const date = dayjs();
   date.hour(0);
   date.minute(0);
   date.second(0);

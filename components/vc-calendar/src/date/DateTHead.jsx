@@ -1,5 +1,5 @@
 import DateConstants from './DateConstants';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 export default {
   functional: true,
@@ -12,7 +12,7 @@ export default {
     const weekDays = [];
     const firstDayOfWeek = localeData.firstDayOfWeek();
     let showWeekNumberEl;
-    const now = moment();
+    const now = dayjs();
     for (let dateColIndex = 0; dateColIndex < DateConstants.DATE_COL_COUNT; dateColIndex++) {
       const index = (firstDayOfWeek + dateColIndex) % DateConstants.DATE_COL_COUNT;
       now.day(index);

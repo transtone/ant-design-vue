@@ -3,26 +3,26 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class MonthPicker extends DatepickerCommon {
   /**
    * to set default date
-   * @type Moment
+   * @type Dayjs
    */
-  defaultValue: Moment;
+  defaultValue: Dayjs;
 
   /**
    * to set default picker date
-   * @type Moment
+   * @type Dayjs
    */
-  defaultPickerValue: Moment;
+  defaultPickerValue: Dayjs;
 
   /**
-   * to set the date format, When an array is provided, all values are used for parsing and first value for display. refer to moment.js
+   * to set the date format, When an array is provided, all values are used for parsing and first value for display. refer to dayjs.js
    * @default 'YYYY-MM'
    * @type string | string[]
-   * @see http://momentjs.com
+   * @see http://dayjsjs.com
    */
   format: string | string[];
 
@@ -40,7 +40,7 @@ export declare class MonthPicker extends DatepickerCommon {
 
   /**
    * to set date
-   * @type Moment
+   * @type Dayjs
    */
-  value: Moment;
+  value: Dayjs;
 }

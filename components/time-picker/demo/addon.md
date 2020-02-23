@@ -22,7 +22,7 @@ Render addon contents to timepicker panel's bottom.
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {

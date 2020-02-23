@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import omit from 'lodash/omit';
 import MonthCalendar from '../vc-calendar/src/MonthCalendar';
 import VcDatePicker from '../vc-calendar/src/Picker';
@@ -19,10 +19,10 @@ import {
 import { cloneElement } from '../_util/vnode';
 
 // export const PickerProps = {
-//   value?: moment.Moment;
+//   value?: dayjs.Dayjs;
 //   prefixCls: string;
 // }
-function noop() {}
+function noop() { }
 export default function createPicker(TheCalendar, props) {
   return {
     props: initDefaultProps(props, {
@@ -39,9 +39,9 @@ export default function createPicker(TheCalendar, props) {
     },
     data() {
       const value = this.value || this.defaultValue;
-      if (value && !interopDefault(moment).isMoment(value)) {
+      if (value && !interopDefault(dayjs).isDayjs(value)) {
         throw new Error(
-          'The value/defaultValue of DatePicker or MonthPicker must be ' + 'a moment object',
+          'The value/defaultValue of DatePicker or MonthPicker must be ' + 'a dayjs object',
         );
       }
       return {
@@ -180,7 +180,7 @@ export default function createPicker(TheCalendar, props) {
           disabledTime,
           locale: locale.lang,
           timePicker: props.timePicker,
-          defaultValue: props.defaultPickerValue || interopDefault(moment)(),
+          defaultValue: props.defaultPickerValue || interopDefault(dayjs)(),
           dateInputPlaceholder: placeholder,
           prefixCls,
           dateRender,
@@ -216,8 +216,8 @@ export default function createPicker(TheCalendar, props) {
             class: `${prefixCls}-picker-icon`,
           })
         ) : (
-          <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
-        ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
+            <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
+          ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
 
       const input = ({ value: inputValue }) => (
         <div>

@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import padStart from 'lodash/padStart';
 
 import interopDefault from '../_util/interopDefault';
@@ -32,8 +32,8 @@ function formatTimeStr(duration, format) {
 
 export function formatCountdown(value, config) {
   const { format = '' } = config;
-  const target = interopDefault(moment)(value).valueOf();
-  const current = interopDefault(moment)().valueOf();
+  const target = interopDefault(dayjs)(value).valueOf();
+  const current = interopDefault(dayjs)().valueOf();
   const diff = Math.max(target - current, 0);
   return formatTimeStr(diff, format);
 }

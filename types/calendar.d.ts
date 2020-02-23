@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { AntdComponent } from './component';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class Calendar extends AntdComponent {
   /**
@@ -11,27 +11,27 @@ export declare class Calendar extends AntdComponent {
    * the returned content will be appended to the cell
    * @type Function
    */
-  dateCellRender: (date: Moment) => any;
+  dateCellRender: (date: Dayjs) => any;
 
   /**
    * Customize the display of the date cell by setting a scoped slot,
    * the returned content will override the cell
    * @type Function
    */
-  dateFullCellRender: (date: Moment) => any;
+  dateFullCellRender: (date: Dayjs) => any;
 
   /**
    * The date selected by default
    * @default default date
-   * @type Moment
+   * @type Dayjs
    */
-  defaultValue: Moment;
+  defaultValue: Dayjs;
 
   /**
    * Function that specifies the dates that cannot be selected
    * @type Function
    */
-  disabledDate: (currentDate: Moment) => boolean;
+  disabledDate: (currentDate: Dayjs) => boolean;
 
   /**
    * Whether to display in full-screen
@@ -59,24 +59,24 @@ export declare class Calendar extends AntdComponent {
    * Customize the display of the month cell by setting a scoped slot, the returned content will be appended to the cell
    * @type Function
    */
-  monthCellRender: (date: Moment) => any;
+  monthCellRender: (date: Dayjs) => any;
 
   /**
    * Customize the display of the month cell by setting a scoped slot, the returned content will override the cell
    * @type Function
    */
-  monthFullCellRender: (date: Moment) => any;
+  monthFullCellRender: (date: Dayjs) => any;
 
   /**
    * to set valid range
-   * @type [Moment, Moment]
+   * @type [Dayjs, Dayjs]
    */
-  validRange: [Moment, Moment];
+  validRange: [Dayjs, Dayjs];
 
   /**
    * The current selected date
    * @default current date
-   * @type Moment
+   * @type Dayjs
    */
-  value: Moment;
+  value: Dayjs;
 }

@@ -3,32 +3,32 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class WeekPicker extends DatepickerCommon {
   /**
    * to set default date
-   * @type Moment
+   * @type Dayjs
    */
-  defaultValue: Moment;
+  defaultValue: Dayjs;
 
   /**
    * to set default picker date
-   * @type Moment
+   * @type Dayjs
    */
-  defaultPickerValue: Moment;
+  defaultPickerValue: Dayjs;
 
   /**
-   * to set the date format, refer to moment.js
+   * to set the date format, refer to dayjs.js
    * @default 'YYYY-wos'
    * @type string
-   * @see http://momentjs.com
+   * @see http://dayjsjs.com
    */
   format: string;
 
   /**
    * to set date
-   * @type Moment
+   * @type Dayjs
    */
-  value: Moment;
+  value: Dayjs;
 }

@@ -1,6 +1,6 @@
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { getComponentFromProp } from '../_util/props-util';
 import { isIE, isIE9 } from '../_util/env';
 
@@ -50,7 +50,7 @@ const Header = {
   },
   watch: {
     $props: {
-      handler: function(nextProps) {
+      handler: function (nextProps) {
         const { value, format } = nextProps;
         this.setState({
           str: (value && value.format(format)) || '',
@@ -84,7 +84,7 @@ const Header = {
 
       if (str) {
         const value = this.getProtoValue().clone();
-        const parsed = moment(str, format, true);
+        const parsed = dayjs(str, format, true);
         if (!parsed.isValid()) {
           this.setState({
             invalid: true,

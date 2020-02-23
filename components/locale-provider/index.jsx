@@ -1,5 +1,5 @@
 import PropTypes from '../_util/vue-types';
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import interopDefault from '../_util/interopDefault';
 import { changeConfirmLocale } from '../modal/locale';
 import Base from '../base';
@@ -17,11 +17,11 @@ import Base from '../base';
 //   Upload?: Object;
 // }
 
-function setMomentLocale(locale) {
+function setDayjsLocale(locale) {
   if (locale && locale.locale) {
-    interopDefault(moment).locale(locale.locale);
+    interopDefault(dayjs).locale(locale.locale);
   } else {
-    interopDefault(moment).locale('en');
+    interopDefault(dayjs).locale('en');
   }
 }
 
@@ -49,12 +49,12 @@ const LocaleProvider = {
         ...this.locale,
         exist: true,
       };
-      setMomentLocale(val);
+      setDayjsLocale(val);
     },
   },
   created() {
     const { locale } = this;
-    setMomentLocale(locale);
+    setDayjsLocale(locale);
     changeConfirmLocale(locale && locale.Modal);
   },
   updated() {
@@ -70,7 +70,7 @@ const LocaleProvider = {
 };
 
 /* istanbul ignore next */
-LocaleProvider.install = function(Vue) {
+LocaleProvider.install = function (Vue) {
   Vue.use(Base);
   Vue.component(LocaleProvider.name, LocaleProvider);
 };

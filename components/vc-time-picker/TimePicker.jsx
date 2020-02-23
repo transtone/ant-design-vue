@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
 import {
@@ -13,7 +13,7 @@ import Trigger from '../vc-trigger';
 import Panel from './Panel';
 import placements from './placements';
 
-function noop() {}
+function noop() { }
 
 export default {
   name: 'VcTimePicker',
@@ -26,7 +26,7 @@ export default {
       defaultOpenValue: {
         type: Object,
         default: () => {
-          return moment();
+          return dayjs();
         },
       },
       inputReadOnly: PropTypes.bool,

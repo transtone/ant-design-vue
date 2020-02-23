@@ -24,9 +24,9 @@ Second, if you don't use the form's automatic check/collection feature, ie you d
 
 See [Customize Theme](/docs/vue/customize-theme/).
 
-### How to optimize momentjs bundle size with webpack?
+### How to optimize dayjsjs bundle size with webpack?
 
-See: https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
+See: https://github.com/jmblog/how-to-optimize-dayjsjs-with-webpack
 
 ### It doesn't work when I change `defaultValue`,`defaultOpenKeys`, `initialValue` dynamically.
 

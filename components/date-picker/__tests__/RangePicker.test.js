@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import DatePicker from '../';
 import { setMockDate, resetMockDate } from '../../../tests/utils';
 import { selectDateFromBody, $$ } from './utils';
@@ -21,7 +21,7 @@ describe('RangePicker', () => {
   });
 
   it('show month panel according to value', async () => {
-    const birthday = moment('2000-01-01', 'YYYY-MM-DD').locale('zh-cn');
+    const birthday = dayjs('2000-01-01', 'YYYY-MM-DD').locale('zh-cn');
     const wrapper = mount(RangePicker, {
       propsData: {
         getCalendarContainer: trigger => trigger,
@@ -48,7 +48,7 @@ describe('RangePicker', () => {
   });
 
   it('switch to corresponding month panel when click presetted ranges', async () => {
-    const birthday = moment('2000-01-01', 'YYYY-MM-DD').locale('zh-cn');
+    const birthday = dayjs('2000-01-01', 'YYYY-MM-DD').locale('zh-cn');
     const wrapper = mount(
       {
         render() {
@@ -91,7 +91,7 @@ describe('RangePicker', () => {
           return (
             <RangePicker
               ranges={{
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'This Month': [dayjs().startOf('month'), dayjs().endOf('month')],
               }}
               getCalendarContainer={trigger => trigger}
               format="YYYY/MM/DD"
@@ -164,7 +164,7 @@ describe('RangePicker', () => {
 
   // issue: https://github.com/ant-design/ant-design/issues/5872
   it('should not throw error when value is reset to `[]`', async () => {
-    const birthday = moment('2000-01-01', 'YYYY-MM-DD');
+    const birthday = dayjs('2000-01-01', 'YYYY-MM-DD');
     const wrapper = mount(RangePicker, {
       propsData: {
         getCalendarContainer: trigger => trigger,
@@ -242,7 +242,7 @@ describe('RangePicker', () => {
         render() {
           return (
             <div>
-              <RangePicker value={[moment(), moment().add(2, 'day')]} />
+              <RangePicker value={[dayjs(), dayjs().add(2, 'day')]} />
             </div>
           );
         },
@@ -274,7 +274,7 @@ describe('RangePicker', () => {
       document.body.outerHTML = '';
     });
     it('static range', async () => {
-      const range = [moment().subtract(2, 'd'), moment()];
+      const range = [dayjs().subtract(2, 'd'), dayjs()];
       const format = 'YYYY-MM-DD HH:mm:ss';
       const wrapper = mount(RangePicker, {
         propsData: {
@@ -299,11 +299,11 @@ describe('RangePicker', () => {
         const inputs = wrapper.findAll('.ant-calendar-range-picker-input');
         expect(inputs.at(inputs.length - 1).element.value).toBe(range[1].format(format));
       });
-      await asyncExpect(() => {});
+      await asyncExpect(() => { });
     });
 
     it('function range', async () => {
-      const range = [moment().subtract(2, 'd'), moment()];
+      const range = [dayjs().subtract(2, 'd'), dayjs()];
       const format = 'YYYY-MM-DD HH:mm:ss';
       const wrapper = mount(RangePicker, {
         propsData: {
@@ -345,7 +345,7 @@ describe('RangePicker', () => {
 
   it('triggers onOk when click on preset range', async () => {
     const handleOk = jest.fn();
-    const range = [moment().subtract(2, 'd'), moment()];
+    const range = [dayjs().subtract(2, 'd'), dayjs()];
     const wrapper = mount(RangePicker, {
       propsData: {
         ranges: { 'recent two days': range },
@@ -373,8 +373,8 @@ describe('RangePicker', () => {
       wrapper.find('.ant-calendar-picker-input').trigger('click');
     });
     await asyncExpect(() => {
-      selectDateFromBody(moment('2017-09-18'), 0);
-      selectDateFromBody(moment('2017-10-18'), 1);
+      selectDateFromBody(dayjs('2017-09-18'), 0);
+      selectDateFromBody(dayjs('2017-10-18'), 1);
     }, 500);
     await asyncExpect(() => {
       wrapper.find('.ant-calendar-picker-input').trigger('click');
@@ -390,7 +390,7 @@ describe('RangePicker', () => {
   // https://github.com/ant-design/ant-design/issues/11631
   it('triggers onOpenChange when click on preset range', async () => {
     const handleOpenChange = jest.fn();
-    const range = [moment().subtract(2, 'd'), moment()];
+    const range = [dayjs().subtract(2, 'd'), dayjs()];
     const wrapper = mount(
       {
         render() {

@@ -1,13 +1,13 @@
 <script>
 import '../assets/index.less';
 
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import TimePicker from '../index';
 
 const format = 'h:mm a';
 
-const now = moment()
+const now = dayjs()
   .hour(0)
   .minute(0);
 
@@ -18,7 +18,7 @@ function onChange(value) {
 const showSecond = true;
 const str = showSecond ? 'HH:mm:ss' : 'HH:mm';
 
-const now1 = moment()
+const now1 = dayjs()
   .hour(14)
   .minute(30);
 
@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       open: false,
-      value: moment(),
+      value: dayjs(),
     };
   },
   methods: {
@@ -106,19 +106,19 @@ export default {
           />
         </div>
         <div>
-          <TimePicker defaultValue={moment()} showHour={false} />
-          <TimePicker defaultValue={moment()} showMinute={false} />
-          <TimePicker defaultValue={moment()} showSecond={false} />
+          <TimePicker defaultValue={dayjs()} showHour={false} />
+          <TimePicker defaultValue={dayjs()} showMinute={false} />
+          <TimePicker defaultValue={dayjs()} showSecond={false} />
 
-          <TimePicker defaultValue={moment()} showMinute={false} showSecond={false} />
-          <TimePicker defaultValue={moment()} showHour={false} showSecond={false} />
-          <TimePicker defaultValue={moment()} showHour={false} showMinute={false} />
+          <TimePicker defaultValue={dayjs()} showMinute={false} showSecond={false} />
+          <TimePicker defaultValue={dayjs()} showHour={false} showSecond={false} />
+          <TimePicker defaultValue={dayjs()} showHour={false} showMinute={false} />
         </div>
         <TimePicker
           format={str}
           showSecond={showSecond}
           // use to control utfOffset, locale, default open value
-          defaultOpenValue={moment()}
+          defaultOpenValue={dayjs()}
           class="xxx"
           onChange={onChange1}
           disabledHours={() => [0, 1, 2, 3, 4, 5, 6, 7, 8, 22, 23]}
@@ -132,11 +132,11 @@ export default {
         <TimePicker
           style={{ width: '100px' }}
           showSecond={showSecond}
-          defaultValue={moment()}
+          defaultValue={dayjs()}
           class="xxx"
           onChange={onChange}
         />
-        <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} />
+        <TimePicker defaultValue={dayjs()} showSecond={false} minuteStep={15} />
         <div>
           <TimePicker defaultValue={this.value} onChange={this.handleValueChange} />
           <TimePicker value={this.value} onChange={this.handleValueChange} />

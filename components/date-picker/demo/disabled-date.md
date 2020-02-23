@@ -15,7 +15,7 @@ Disabled part of dates and time by `disabledDate` and `disabledTime` respectivel
       format="YYYY-MM-DD HH:mm:ss"
       :disabledDate="disabledDate"
       :disabledTime="disabledDateTime"
-      :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+      :showTime="{ defaultValue: dayjs('00:00:00', 'HH:mm:ss') }"
     />
     <br />
     <a-month-picker :disabledDate="disabledDate" placeholder="Select month" />
@@ -25,17 +25,17 @@ Disabled part of dates and time by `disabledDate` and `disabledTime` respectivel
       :disabledTime="disabledRangeTime"
       :showTime="{
         hideDisabledOptions: true,
-        defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')]
+        defaultValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('11:59:59', 'HH:mm:ss')]
       }"
       format="YYYY-MM-DD HH:mm:ss"
     />
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     methods: {
-      moment,
+      dayjs,
       range(start, end) {
         const result = [];
         for (let i = start; i < end; i++) {
@@ -46,7 +46,7 @@ Disabled part of dates and time by `disabledDate` and `disabledTime` respectivel
 
       disabledDate(current) {
         // Can not select days before today and today
-        return current && current < moment().endOf('day');
+        return current && current < dayjs().endOf('day');
       },
 
       disabledDateTime() {

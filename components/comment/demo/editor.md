@@ -47,14 +47,14 @@ Comment can be used as editor, user can customize the editor component.
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
         comments: [],
         submitting: false,
         value: '',
-        moment,
+        dayjs,
       };
     },
     methods: {
@@ -72,7 +72,7 @@ Comment can be used as editor, user can customize the editor component.
               author: 'Han Solo',
               avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
               content: this.value,
-              datetime: moment().fromNow(),
+              datetime: dayjs().fromNow(),
             },
             ...this.comments,
           ];

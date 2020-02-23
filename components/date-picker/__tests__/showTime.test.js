@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import DatePicker from '../';
 
 const { RangePicker } = DatePicker;
@@ -52,7 +52,7 @@ describe('DatePicker with showTime', () => {
               onChange={onChangeFn}
               onOk={onOkFn}
               onOpenChange={onOpenChangeFn}
-              defaultValue={moment()}
+              defaultValue={dayjs()}
             />
           );
         },

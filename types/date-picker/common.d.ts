@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { AntdComponent } from '../component';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class DatepickerCommon extends AntdComponent {
   /**
@@ -37,7 +37,7 @@ export declare class DatepickerCommon extends AntdComponent {
    * specify the date that cannot be selected
    * @type Function
    */
-  disabledDate: (currentDate: Moment) => boolean;
+  disabledDate: (currentDate: Dayjs) => boolean;
 
   /**
    * to set the container of the floating layer, while the default is to create a div element in body

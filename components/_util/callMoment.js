@@ -1,4 +1,4 @@
-// https://github.com/moment/moment/issues/3650
-export default function callMoment(moment, ...args) {
-  return (moment.default || moment)(...args);
+// https://github.com/dayjs/dayjs/issues/3650
+export default function callDayjs(dayjs, ...args) {
+  return (dayjs.default || dayjs)(...args);
 }

@@ -1,35 +1,35 @@
 import PropTypes from '../../../_util/vue-types';
 import BaseMixin from '../../../_util/BaseMixin';
 import { hasProp } from '../../../_util/props-util';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { isAllowedDate, getTodayTime } from '../util/index';
-function noop() {}
+function noop() { }
 
 export function getNowByCurrentStateValue(value) {
   let ret;
   if (value) {
     ret = getTodayTime(value);
   } else {
-    ret = moment();
+    ret = dayjs();
   }
   return ret;
 }
-function isMoment(value) {
+function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || moment.isMoment(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
     );
   } else {
-    return value === undefined || moment.isMoment(value);
+    return value === undefined || dayjs.isDayjs(value);
   }
 }
-const MomentType = PropTypes.custom(isMoment);
+const DayjsType = PropTypes.custom(isDayjs);
 const CalendarMixin = {
   mixins: [BaseMixin],
   name: 'CalendarMixinWrapper',
   props: {
-    value: MomentType,
-    defaultValue: MomentType,
+    value: DayjsType,
+    defaultValue: DayjsType,
   },
 
   data() {

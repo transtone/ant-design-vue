@@ -18,11 +18,11 @@
 
 | Property   | Description                              | Type             | Default    |
 | ---------- | ---------------------------------------- | ---------------- | ---------- |
-| format     | Format as [moment](http://momentjs.com/) | string           | 'HH:mm:ss' |
+| format     | Format as [dayjs](http://dayjsjs.com/) | string           | 'HH:mm:ss' |
 | prefix     | prefix node of value                     | string \| v-slot | -          |
 | suffix     | suffix node of value                     | string \| v-slot | -          |
 | title      | Display title                            | string \| v-slot | -          |
-| value      | Set target countdown time                | number \| moment | -          |
+| value      | Set target countdown time                | number \| dayjs | -          |
 | valueStyle | Set value css style                      | style            | -          |
 
 #### Statistic.Countdown Events

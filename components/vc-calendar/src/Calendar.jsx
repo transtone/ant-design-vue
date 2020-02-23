@@ -3,7 +3,7 @@ import BaseMixin from '../../_util/BaseMixin';
 import { getOptionProps, hasProp, getComponentFromProp } from '../../_util/props-util';
 import { cloneElement } from '../../_util/vnode';
 import KeyCode from '../../_util/KeyCode';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import DateTable from './date/DateTable';
 import CalendarHeader from './calendar/CalendarHeader';
 import CalendarFooter from './calendar/CalendarFooter';
@@ -54,7 +54,7 @@ const Calendar = {
     const props = this.$props;
     return {
       sMode: this.mode || 'date',
-      sValue: props.value || props.defaultValue || moment(),
+      sValue: props.value || props.defaultValue || dayjs(),
       sSelectedValue: props.selectedValue || props.defaultSelectedValue,
     };
   },

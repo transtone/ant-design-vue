@@ -1,7 +1,7 @@
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
 import { getOptionProps, hasProp, initDefaultProps, getListeners } from '../_util/props-util';
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import FullCalendar from '../vc-calendar/src/FullCalendar';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import Header from './Header';
@@ -20,21 +20,21 @@ function zerofixed(v) {
   }
   return `${v}`;
 }
-export const MomentType = {
+export const DayjsType = {
   type: Object,
-  validator: function(value) {
-    return moment.isMoment(value);
+  validator: function (value) {
+    return dayjs.isDayjs(value);
   },
 };
-function isMomentArray(value) {
-  return Array.isArray(value) && !!value.find(val => moment.isMoment(val));
+function isDayjsArray(value) {
+  return Array.isArray(value) && !!value.find(val => dayjs.isDayjs(val));
 }
 export const CalendarMode = PropTypes.oneOf(['month', 'year']);
 
 export const CalendarProps = () => ({
   prefixCls: PropTypes.string,
-  value: MomentType,
-  defaultValue: MomentType,
+  value: DayjsType,
+  defaultValue: DayjsType,
   mode: CalendarMode,
   fullscreen: PropTypes.bool,
   // dateCellRender: PropTypes.func,
@@ -42,10 +42,10 @@ export const CalendarProps = () => ({
   // dateFullCellRender: PropTypes.func,
   // monthFullCellRender: PropTypes.func,
   locale: PropTypes.object,
-  // onPanelChange?: (date?: moment.Moment, mode?: CalendarMode) => void;
-  // onSelect?: (date?: moment.Moment) => void;
+  // onPanelChange?: (date?: dayjs.Dayjs, mode?: CalendarMode) => void;
+  // onSelect?: (date?: dayjs.Dayjs) => void;
   disabledDate: PropTypes.func,
-  validRange: PropTypes.custom(isMomentArray),
+  validRange: PropTypes.custom(isDayjsArray),
 });
 
 const Calendar = {
@@ -64,9 +64,9 @@ const Calendar = {
     configProvider: { default: () => ConfigConsumerProps },
   },
   data() {
-    const value = this.value || this.defaultValue || interopDefault(moment)();
-    if (!interopDefault(moment).isMoment(value)) {
-      throw new Error('The value/defaultValue of Calendar must be a moment object, ');
+    const value = this.value || this.defaultValue || interopDefault(dayjs)();
+    if (!interopDefault(dayjs).isDayjs(value)) {
+      throw new Error('The value/defaultValue of Calendar must be a dayjs object, ');
     }
     this._sPrefixCls = undefined;
     return {
@@ -254,7 +254,7 @@ const Calendar = {
 };
 
 /* istanbul ignore next */
-Calendar.install = function(Vue) {
+Calendar.install = function (Vue) {
   Vue.use(Base);
   Vue.component(Calendar.name, Calendar);
 };

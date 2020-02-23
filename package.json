@@ -1,5 +1,5 @@
 {
-    "name": "ant-design-vue",
+    "name": "@transtone/ant-design-vue",
     "version": "1.4.11",
     "title": "Ant Design Vue",
     "description": "An enterprise-class UI design language and Vue-based implementation",
@@ -184,6 +184,7 @@
         "babel-runtime": "6.x",
         "classnames": "^2.2.5",
         "component-classes": "^1.2.6",
+        "dayjs": "^1.8.20",
         "dom-align": "^1.7.0",
         "dom-closest": "^0.2.0",
         "dom-scroll-into-view": "^2.0.0",
@@ -193,7 +194,6 @@
         "ismobilejs": "^1.0.0",
         "json2mq": "^0.2.0",
         "lodash": "^4.17.5",
-        "moment": "^2.21.0",
         "mutationobserver-shim": "^0.3.2",
         "node-emoji": "^1.10.0",
         "omit.js": "^1.0.0",

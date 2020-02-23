@@ -11,16 +11,16 @@ The input box comes in three sizes. large is used in the form, while the medium 
 ```tpl
 <template>
   <div>
-    <a-time-picker :defaultValue="moment('12:08:23', 'HH:mm:ss')" size="large" />
-    <a-time-picker :defaultValue="moment('12:08:23', 'HH:mm:ss')" />
-    <a-time-picker :defaultValue="moment('12:08:23', 'HH:mm:ss')" size="small" />
+    <a-time-picker :defaultValue="dayjs('12:08:23', 'HH:mm:ss')" size="large" />
+    <a-time-picker :defaultValue="dayjs('12:08:23', 'HH:mm:ss')" />
+    <a-time-picker :defaultValue="dayjs('12:08:23', 'HH:mm:ss')" size="small" />
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     methods: {
-      moment,
+      dayjs,
     },
   };
 </script>

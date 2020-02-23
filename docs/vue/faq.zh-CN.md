@@ -24,9 +24,9 @@
 
 参考[主题定制](/docs/vue/customize-theme/)。
 
-### 如何配置 webpack 以优化 momentjs 的打包大小？
+### 如何配置 webpack 以优化 dayjsjs 的打包大小？
 
-参考：https://github.com/jmblog/how-to-optimize-momentjs-with-webpack 。
+参考：https://github.com/jmblog/how-to-optimize-dayjsjs-with-webpack 。
 
 ### 当我动态改变 `defaultValue`,`defaultOpenKeys`, `initialValue`等`defaultXxxx`的时候它并没有生效。
 

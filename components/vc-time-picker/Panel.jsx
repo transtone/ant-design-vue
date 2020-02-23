@@ -1,11 +1,11 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
 import Header from './Header';
 import Combobox from './Combobox';
 import { getComponentFromProp, getListeners } from '../_util/props-util';
 
-function noop() {}
+function noop() { }
 
 function generateOptions(length, disabledOptions, hideDisabledOptions, step = 1) {
   const arr = [];
@@ -27,7 +27,7 @@ function toNearestValidTime(time, hourOptions, minuteOptions, secondOptions) {
   const second = secondOptions
     .slice()
     .sort((a, b) => Math.abs(time.second() - a) - Math.abs(time.second() - b))[0];
-  return moment(`${hour}:${minute}:${second}`, 'HH:mm:ss');
+  return dayjs(`${hour}:${minute}:${second}`, 'HH:mm:ss');
 }
 
 const Panel = {
@@ -38,7 +38,7 @@ const Panel = {
     defaultOpenValue: {
       type: Object,
       default: () => {
-        return moment();
+        return dayjs();
       },
     },
     value: PropTypes.any,

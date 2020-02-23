@@ -11,25 +11,25 @@ A disabled state of the `DatePicker`.
 ```tpl
 <template>
   <div>
-    <a-date-picker :defaultValue="moment('2015-06-06', dateFormat)" disabled />
+    <a-date-picker :defaultValue="dayjs('2015-06-06', dateFormat)" disabled />
     <br />
-    <a-month-picker :defaultValue="moment('2015-06', 'YYYY-MM')" disabled />
+    <a-month-picker :defaultValue="dayjs('2015-06', 'YYYY-MM')" disabled />
     <br />
     <a-range-picker
-      :defaultValue="[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]"
+      :defaultValue="[dayjs('2015-06-06', dateFormat), dayjs('2015-06-06', dateFormat)]"
       disabled
     />
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       this.dateFormat = 'YYYY-MM-DD';
       return {};
     },
     methods: {
-      moment,
+      dayjs,
     },
   };
 </script>

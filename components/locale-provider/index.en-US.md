@@ -14,10 +14,10 @@
 </template>
 <script>
   import fr_FR from 'ant-design-vue/lib/locale-provider/fr_FR';
-  import moment from 'moment';
-  import 'moment/locale/fr';
+  import dayjs from 'dayjs';
+  import 'dayjs/locale/fr';
 
-  moment.locale('fr');
+  dayjs.locale('fr');
   export default {
     data() {
       return {
@@ -30,7 +30,7 @@
 
 We provide some locale like English, Chinese, Russian, German, French and etc, all locale packages can be found in [here](https://github.com/vueComponent/ant-design-vue/tree/master/components/locale-provider).
 
-Note: if you need to use antd's UMD dist file, please use `antd/dist/antd-with-locales.js` and corresponding moment locale:
+Note: if you need to use antd's UMD dist file, please use `antd/dist/antd-with-locales.js` and corresponding dayjs locale:
 
 ```html
 <template>

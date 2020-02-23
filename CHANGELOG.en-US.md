@@ -294,7 +294,7 @@
 - 🐞 Fix `TreeSelect` without `dataRef` [#712](https://github.com/vueComponent/ant-design-vue/issues/712)
 - 🌟 `Tooltip` add `destroyTooltipOnHide` to identify whether to destroy tooltip after hiding [#727](https://github.com/vueComponent/ant-design-vue/issues/727)
 - 🐞 Fix `Avatar` does not update the problem when setting `src` dynamically [#731](https://github.com/vueComponent/ant-design-vue/issues/731)
-- 🐞 Fix `LocaleProvider` change `moment` language does not work [28b7a6](https://github.com/vueComponent/ant-design-vue/commit/28b7a68dc48a0a994e98063d462b99380e3ee547)
+- 🐞 Fix `LocaleProvider` change `dayjs` language does not work [28b7a6](https://github.com/vueComponent/ant-design-vue/commit/28b7a68dc48a0a994e98063d462b99380e3ee547)
 - 🌟 `Modal.confirm` add `closable` configuration [#798](https://github.com/vueComponent/ant-design-vue/pull/798)
 - 🐞 Fixed a problem when `Select` custom `dropdownRender` was not automatically closed [#644](https://github.com/vueComponent/ant-design-vue/issues/644)
 - 🐞 Fix the problem of removing Dom error under ie9, no need to introduce polyfill separately [#705](https://github.com/vueComponent/ant-design-vue/issues/705)

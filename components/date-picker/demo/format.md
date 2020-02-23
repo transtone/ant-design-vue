@@ -11,18 +11,18 @@ We can set the date format by `format`.
 ```tpl
 <template>
   <div>
-    <a-date-picker :defaultValue="moment('2015/01/01', dateFormat)" :format="dateFormat" />
+    <a-date-picker :defaultValue="dayjs('2015/01/01', dateFormat)" :format="dateFormat" />
     <br />
-    <a-month-picker :defaultValue="moment('2015/01', monthFormat)" :format="monthFormat" />
+    <a-month-picker :defaultValue="dayjs('2015/01', monthFormat)" :format="monthFormat" />
     <br />
     <a-range-picker
-      :defaultValue="[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]"
+      :defaultValue="[dayjs('2015/01/01', dateFormat), dayjs('2015/01/01', dateFormat)]"
       :format="dateFormat"
     />
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
@@ -31,7 +31,7 @@ We can set the date format by `format`.
       };
     },
     methods: {
-      moment,
+      dayjs,
     },
   };
 </script>

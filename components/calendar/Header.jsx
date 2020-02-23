@@ -12,7 +12,7 @@ export const HeaderProps = {
   yearSelectOffset: PropTypes.number,
   yearSelectTotal: PropTypes.number,
   type: PropTypes.string,
-  // onValueChange: PropTypes.(value: moment.Moment) => void,
+  // onValueChange: PropTypes.(value: dayjs.Dayjs) => void,
   // onTypeChange: PropTypes.(type: string) => void,
   value: PropTypes.any,
   validRange: PropTypes.array,

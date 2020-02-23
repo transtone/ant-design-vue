@@ -24,12 +24,12 @@ value 和 onChange 需要配合使用。也可以直接使用v-model。
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
         value: null,
-        value2: moment(),
+        value2: dayjs(),
       };
     },
     methods: {

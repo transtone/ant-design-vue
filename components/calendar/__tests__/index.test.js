@@ -1,4 +1,4 @@
-import Moment from 'moment';
+import Dayjs from 'dayjs';
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
 import MockDate from 'mockdate';
@@ -27,13 +27,13 @@ describe('Calendar', () => {
     await asyncExpect(() => {
       expect(onSelect).toBeCalledWith(expect.anything());
       const value = onSelect.mock.calls[0][0];
-      expect(Moment.isMoment(value)).toBe(true);
+      expect(Dayjs.isDayjs(value)).toBe(true);
     });
   });
 
   it('only Valid range should be selectable', async () => {
     const onSelect = jest.fn();
-    const validRange = [Moment('2018-02-02'), Moment('2018-02-18')];
+    const validRange = [Dayjs('2018-02-02'), Dayjs('2018-02-18')];
     const wrapper = mount(
       {
         render() {
@@ -41,7 +41,7 @@ describe('Calendar', () => {
             <Calendar
               onSelect={onSelect}
               validRange={validRange}
-              defaultValue={Moment('2018-02-02')}
+              defaultValue={Dayjs('2018-02-02')}
             />
           );
         },
@@ -63,7 +63,7 @@ describe('Calendar', () => {
 
   it('dates other than in valid range should be disabled', async () => {
     const onSelect = jest.fn();
-    const validRange = [Moment('2018-02-02'), Moment('2018-02-18')];
+    const validRange = [Dayjs('2018-02-02'), Dayjs('2018-02-18')];
     const wrapper = mount(
       {
         render() {
@@ -71,7 +71,7 @@ describe('Calendar', () => {
             <Calendar
               onSelect={onSelect}
               validRange={validRange}
-              defaultValue={Moment('2018-02-02')}
+              defaultValue={Dayjs('2018-02-02')}
             />
           );
         },
@@ -92,7 +92,7 @@ describe('Calendar', () => {
 
   it('months other than in valid range should be disabled', async () => {
     const onSelect = jest.fn();
-    const validRange = [Moment('2018-02-02'), Moment('2018-05-18')];
+    const validRange = [Dayjs('2018-02-02'), Dayjs('2018-05-18')];
     const wrapper = mount(
       {
         render() {
@@ -100,7 +100,7 @@ describe('Calendar', () => {
             <Calendar
               onSelect={onSelect}
               validRange={validRange}
-              defaultValue={Moment('2018-02-02')}
+              defaultValue={Dayjs('2018-02-02')}
               mode="year"
             />
           );
@@ -141,7 +141,7 @@ describe('Calendar', () => {
 
   it('months other than in valid range should not be shown in header', async () => {
     document.body.innerHTML = '';
-    const validRange = [Moment('2017-02-02'), Moment('2018-05-18')];
+    const validRange = [Dayjs('2017-02-02'), Dayjs('2018-05-18')];
     const wrapper = mount(
       {
         render() {
@@ -159,19 +159,19 @@ describe('Calendar', () => {
   });
 
   it('getDateRange should returns a disabledDate function', async () => {
-    const validRange = [Moment('2018-02-02'), Moment('2018-05-18')];
+    const validRange = [Dayjs('2018-02-02'), Dayjs('2018-05-18')];
     const wrapper = mount(Calendar, {
       propsData: {
         validRange,
-        defaultValue: Moment('2018-02-02'),
+        defaultValue: Dayjs('2018-02-02'),
       },
       sync: false,
     });
     await asyncExpect(() => {
       const instance = wrapper.vm;
       const disabledDate = instance.getDateRange(validRange);
-      expect(disabledDate(Moment('2018-06-02'))).toBe(true);
-      expect(disabledDate(Moment('2018-04-02'))).toBe(false);
+      expect(disabledDate(Dayjs('2018-06-02'))).toBe(true);
+      expect(disabledDate(Dayjs('2018-04-02'))).toBe(false);
     });
   });
 
@@ -212,7 +212,7 @@ describe('Calendar', () => {
   });
 
   it('Calendar should support locale', async () => {
-    MockDate.set(Moment('2018-10-19'));
+    MockDate.set(Dayjs('2018-10-19'));
     // eslint-disable-next-line
     const zhCN = require('../locale/zh_CN').default;
     const wrapper = mount(Calendar, {

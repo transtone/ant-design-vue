@@ -27,7 +27,7 @@ The input box comes in three sizes. `default` will be used if `size` is omitted.
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {

@@ -10,13 +10,13 @@ A disabled state of the `TimePicker`.
 
 ```tpl
 <template>
-  <a-time-picker :defaultValue="moment('12:08:23', 'HH:mm:ss')" disabled />
+  <a-time-picker :defaultValue="dayjs('12:08:23', 'HH:mm:ss')" disabled />
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     methods: {
-      moment,
+      dayjs,
     },
   };
 </script>

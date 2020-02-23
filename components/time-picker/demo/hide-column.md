@@ -10,13 +10,13 @@ While part of `format` is omitted, the corresponding column in panel will disapp
 
 ```tpl
 <template>
-  <a-time-picker :defaultValue="moment('12:08', 'HH:mm')" format="HH:mm" />
+  <a-time-picker :defaultValue="dayjs('12:08', 'HH:mm')" format="HH:mm" />
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     methods: {
-      moment,
+      dayjs,
     },
   };
 </script>

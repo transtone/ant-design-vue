@@ -6,8 +6,8 @@
 | allowClear | allow clearing text | boolean | true |
 | autoFocus | get focus when component mounted | boolean | false |
 | clearText | clear tooltip of icon | string | clear |
-| defaultOpenValue | default open panel value, used to set utcOffset,locale if value/defaultValue absent | [moment](http://momentjs.com/) | moment() |
-| defaultValue | to set default time | [moment](http://momentjs.com/) | - |
+| defaultOpenValue | default open panel value, used to set utcOffset,locale if value/defaultValue absent | [dayjs](http://dayjsjs.com/) | dayjs() |
+| defaultValue | to set default time | [dayjs](http://dayjsjs.com/) | - |
 | disabled | determine whether the TimePicker is disabled | boolean | false |
 | disabledHours | to specify the hours that cannot be selected | function() | - |
 | disabledMinutes | to specify the minutes that cannot be selected | function(selectedHour) | - |
@@ -25,13 +25,13 @@
 | secondStep | interval between seconds in picker | number | 1 |
 | suffixIcon | The custom suffix icon | string \| VNode \| slot | - |
 | use12Hours | display as 12 hours format, with default format `h:mm:ss a` | boolean | false |
-| value(v-model) | to set time | [moment](http://momentjs.com/) | - |
+| value(v-model) | to set time | [dayjs](http://dayjsjs.com/) | - |
 
 ### events
 
 | Events Name | Description | Arguments |
 | --- | --- | --- |
-| change | a callback function, can be executed when the selected time is changing | function(time: moment, timeString: string): void |
+| change | a callback function, can be executed when the selected time is changing | function(time: dayjs, timeString: string): void |
 | openChange | a callback function which will be called while panel opening/closing | (open: boolean): void |
 
 ## Methods

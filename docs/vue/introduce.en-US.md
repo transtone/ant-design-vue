@@ -63,7 +63,7 @@ We provide `antd.js` `antd.css` and `antd.min.js` `antd.min.css` under `ant-desi
 
 > **We strongly discourage loading the entire files** this will add bloat to your application and make it more difficult to receive bugfixes and updates. Antd is intended to be used in conjunction with a build tool, such as [webpack](https://webpack.github.io/), which will make it easy to import only the parts of antd that you are using.
 
-> Note: you should import moment before using antd.js.
+> Note: you should import dayjs before using antd.js.
 
 ## Usage
 

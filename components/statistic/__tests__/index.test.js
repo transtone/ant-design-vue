@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
 import MockDate from 'mockdate';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Statistic from '..';
 
 describe('Statistic', () => {
   beforeAll(() => {
-    MockDate.set(moment('2018-11-28 00:00:00'));
+    MockDate.set(dayjs('2018-11-28 00:00:00'));
   });
 
   afterAll(() => {
@@ -61,7 +61,7 @@ describe('Statistic', () => {
 
   describe('Countdown', () => {
     it('render correctly', () => {
-      const now = moment()
+      const now = dayjs()
         .add(2, 'd')
         .add(11, 'h')
         .add(28, 'm')

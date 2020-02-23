@@ -3,32 +3,32 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class RangePicker extends DatepickerCommon {
   /**
    * to set default date
-   * @type [Moment, Moment]
+   * @type [Dayjs, Dayjs]
    */
-  defaultValue: [Moment, Moment];
+  defaultValue: [Dayjs, Dayjs];
 
   /**
    * to set default picker date
-   * @type [Moment, Moment]
+   * @type [Dayjs, Dayjs]
    */
-  defaultPickerValue: [Moment, Moment];
+  defaultPickerValue: [Dayjs, Dayjs];
 
   /**
    * to specify the time that cannot be selected
    * @type Function
    */
-  disabledTime: (dates: [Moment, Moment], partial: 'start' | 'end') => any;
+  disabledTime: (dates: [Dayjs, Dayjs], partial: 'start' | 'end') => any;
 
   /**
-   * to set the date format, refer to moment.js
+   * to set the date format, refer to dayjs.js
    * @default 'YYYY-MM-DD HH:mm:ss'
    * @type string
-   * @see http://momentjs.com
+   * @see http://dayjsjs.com
    */
   format: string;
 
@@ -36,7 +36,7 @@ export declare class RangePicker extends DatepickerCommon {
    * preseted ranges for quick selection
    * @type object
    */
-  ranges: { [range: string]: Moment[] } | { [range: string]: () => Moment[] };
+  ranges: { [range: string]: Dayjs[] } | { [range: string]: () => Dayjs[] };
 
   /**
    * render extra footer in panel by setting a scoped slot
@@ -46,7 +46,7 @@ export declare class RangePicker extends DatepickerCommon {
 
   /**
    * to provide an additional time selection
-   * showTime.defaultValue to set default time of selected date - type Moment[]
+   * showTime.defaultValue to set default time of selected date - type Dayjs[]
    * @default TimePicker Options
    * @type object | boolean
    */
@@ -54,7 +54,7 @@ export declare class RangePicker extends DatepickerCommon {
 
   /**
    * to set date
-   * @type [Moment, Moment]
+   * @type [Dayjs, Dayjs]
    */
-  value: [Moment, Moment];
+  value: [Dayjs, Dayjs];
 }

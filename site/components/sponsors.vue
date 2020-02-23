@@ -1,9 +1,7 @@
 <template>
   <div class="snd-ad">
     <div class="sponsorsWrap">
-      <span class="sponsorsTitle">
-        {{ isCN ? '赞助商' : 'Sponsors' }}
-      </span>
+      <span class="sponsorsTitle">{{ isCN ? '赞助商' : 'Sponsors' }}</span>
       <ul>
         <li class="sponsorsItem">
           <a href="https://tipe.io/?ref=ant-design-vue" target="_blank">
@@ -16,21 +14,26 @@
           </a>
         </li>
         <li class="sponsorsItem">
-          <a-button type="primary" ghost style="font-size: 12px" @click="handleClick">
-            {{ isCN ? '成为赞助商' : 'Become a Sponsor' }}
-          </a-button>
+          <a-button
+            type="primary"
+            ghost
+            style="font-size: 12px"
+            @click="handleClick"
+          >{{ isCN ? '成为赞助商' : 'Become a Sponsor' }}</a-button>
         </li>
       </ul>
     </div>
     <a-modal v-model="visible" title="成为赞助商" @ok="visible = false">
-      如果您有品牌推广、活动推广、招聘推广、社区合作等需求，欢迎联系我们，成为赞助商。<br />
-      您的广告将出现在 And Design Vue 文档所有子页面及 GitHub Readme 等页面。<br />
-      咨询邮箱：<a href="mailto:antdv@foxmail.com">antdv@foxmail.com</a><br />
+      如果您有品牌推广、活动推广、招聘推广、社区合作等需求，欢迎联系我们，成为赞助商。
+      <br />您的广告将出现在 And Design Vue 文档所有子页面及 GitHub Readme 等页面。
+      <br />咨询邮箱：
+      <a href="mailto:antdv@foxmail.com">antdv@foxmail.com</a>
+      <br />
     </a-modal>
   </div>
 </template>
 <script>
-import moment from 'moment';
+import dayjs from 'dayjs';
 export default {
   props: ['isCN'],
   data() {
@@ -47,7 +50,7 @@ export default {
   },
   methods: {
     isEffective({ start, end }) {
-      return moment().isBetween(start, end);
+      return dayjs().isBetween(start, end);
     },
     handleClick() {
       if (this.isCN) {

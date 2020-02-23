@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="isEffective(effectiveTime)"
-    id="geektime-ads"
-    :class="isMobile ? 'geektime-ads-mobile' : ''"
-  >
+  <div v-if="isEffective(effectiveTime)" id="geektime-ads" :class="isMobile ? 'geektime-ads-mobile' : ''">
     <a
       href="https://time.geekbang.org/column/intro/154?utm_term=zeusGZFFE&utm_source=app&utm_medium=tangjinzhou"
       target="_blank"
@@ -14,7 +10,7 @@
 </template>
 
 <script>
-import moment from 'moment';
+import dayjs from 'dayjs';
 export default {
   props: ['isMobile'],
   data() {
@@ -28,7 +24,7 @@ export default {
   },
   methods: {
     isEffective({ start, end }) {
-      return moment().isBetween(start, end);
+      return dayjs().isBetween(start, end);
     },
   },
 };

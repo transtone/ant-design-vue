@@ -10,13 +10,13 @@ Click `TimePicker`, and then we could select or input a time in panel.
 
 ```tpl
 <template>
-  <a-time-picker @change="onChange" :defaultOpenValue="moment('00:00:00', 'HH:mm:ss')" />
+  <a-time-picker @change="onChange" :defaultOpenValue="dayjs('00:00:00', 'HH:mm:ss')" />
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     methods: {
-      moment,
+      dayjs,
       onChange(time, timeString) {
         console.log(time, timeString);
       },

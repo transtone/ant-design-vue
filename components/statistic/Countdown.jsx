@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import interopDefault from '../_util/interopDefault';
 import { cloneElement } from '../_util/vnode';
 import { initDefaultProps, getListeners } from '../_util/props-util';
@@ -8,7 +8,7 @@ import { formatCountdown } from './utils';
 const REFRESH_INTERVAL = 1000 / 30;
 
 function getTime(value) {
-  return interopDefault(moment)(value).valueOf();
+  return interopDefault(dayjs)(value).valueOf();
 }
 
 export default {

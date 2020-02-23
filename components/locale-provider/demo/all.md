@@ -45,7 +45,7 @@ Components which need localization support are listed here, you can toggle the l
           <a-transfer :dataSource="[]" showSearch :targetKeys="[]" :render="item => item.title" />
         </div>
         <div :style="{ width: '319px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
-          <a-calendar :fullscreen="false" :value="moment()" />
+          <a-calendar :fullscreen="false" :value="dayjs()" />
         </div>
         <a-modal title="Locale Modal" v-model="visible">
           <p>Locale Modal</p>
@@ -58,9 +58,9 @@ Components which need localization support are listed here, you can toggle the l
   // you should use import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
   import zhCN from 'ant-design-vue/locale-provider/zh_CN';
   import { Modal } from 'ant-design-vue';
-  import moment from 'moment';
-  import 'moment/locale/zh-cn';
-  moment.locale('en');
+  import dayjs from 'dayjs';
+  import 'dayjs/locale/zh-cn';
+  dayjs.locale('en');
   const columns = [
     {
       title: 'Name',
@@ -86,7 +86,7 @@ Components which need localization support are listed here, you can toggle the l
       };
     },
     methods: {
-      moment,
+      dayjs,
       showModal() {
         this.visible = true;
       },
@@ -109,9 +109,9 @@ Components which need localization support are listed here, you can toggle the l
         const localeValue = e.target.value;
         this.locale = localeValue;
         if (!localeValue) {
-          moment.locale('en');
+          dayjs.locale('en');
         } else {
-          moment.locale('zh-cn');
+          dayjs.locale('zh-cn');
         }
       },
     },

@@ -27,13 +27,13 @@ A basic calendar component with Year/Month switch.
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
-        value: moment('2017-01-25'),
-        selectedValue: moment('2017-01-25'),
-        value1: moment('2017-01-25'),
+        value: dayjs('2017-01-25'),
+        selectedValue: dayjs('2017-01-25'),
+        value1: dayjs('2017-01-25'),
       };
     },
     methods: {

@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import RangeCalendar from '../vc-calendar/src/RangeCalendar';
 import VcDatePicker from '../vc-calendar/src/Picker';
 import classNames from 'classnames';
@@ -19,7 +19,7 @@ import {
 } from '../_util/props-util';
 import BaseMixin from '../_util/BaseMixin';
 import { cloneElement } from '../_util/vnode';
-function noop() {}
+function noop() { }
 function getShowDateFromValue(value) {
   const [start, end] = value;
   // value could be an empty array, then we should not reset showDate
@@ -85,18 +85,18 @@ export default {
     const value = this.value || this.defaultValue || [];
     const [start, end] = value;
     if (
-      (start && !interopDefault(moment).isMoment(start)) ||
-      (end && !interopDefault(moment).isMoment(end))
+      (start && !interopDefault(dayjs).isDayjs(start)) ||
+      (end && !interopDefault(dayjs).isDayjs(end))
     ) {
       throw new Error(
-        'The value/defaultValue of RangePicker must be a moment object array after `antd@2.0`, ' +
-          'see: https://u.ant.design/date-picker-value',
+        'The value/defaultValue of RangePicker must be a dayjs object array after `antd@2.0`, ' +
+        'see: https://u.ant.design/date-picker-value',
       );
     }
     const pickerValue = !value || isEmptyArray(value) ? this.defaultPickerValue : value;
     return {
       sValue: value,
-      sShowDate: pickerValueAdapter(pickerValue || interopDefault(moment)()),
+      sShowDate: pickerValueAdapter(pickerValue || interopDefault(dayjs)()),
       sOpen: this.open,
       sHoverValue: [],
     };
@@ -376,8 +376,8 @@ export default {
           class: `${prefixCls}-picker-icon`,
         })
       ) : (
-        <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
-      ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
+          <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
+        ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
 
     const input = ({ value: inputValue }) => {
       const [start, end] = inputValue;

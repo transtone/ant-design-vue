@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from '../../_util/vue-types';
 import BaseMixin from '../../_util/BaseMixin';
 import { getOptionProps, hasProp, getListeners } from '../../_util/props-util';
@@ -44,7 +44,7 @@ const FullCalendar = {
     const props = this.$props;
     return {
       sType: type,
-      sValue: props.value || props.defaultValue || moment(),
+      sValue: props.value || props.defaultValue || dayjs(),
       sSelectedValue: props.selectedValue || props.defaultSelectedValue,
     };
   },
@@ -131,16 +131,16 @@ const FullCalendar = {
           disabledDate={disabledDate}
         />
       ) : (
-        <MonthTable
-          cellRender={props.monthCellRender}
-          contentRender={props.monthCellContentRender}
-          locale={locale}
-          onSelect={this.onMonthSelect}
-          prefixCls={`${prefixCls}-month-panel`}
-          value={value}
-          disabledDate={disabledDate}
-        />
-      );
+          <MonthTable
+            cellRender={props.monthCellRender}
+            contentRender={props.monthCellContentRender}
+            locale={locale}
+            onSelect={this.onMonthSelect}
+            prefixCls={`${prefixCls}-month-panel`}
+            value={value}
+            disabledDate={disabledDate}
+          />
+        );
 
     const children = [
       header,

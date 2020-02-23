@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 import { RangePicker } from './range-picker';
 import { MonthPicker } from './month-picker';
 import { WeekPicker } from './week-picker';
@@ -17,17 +17,17 @@ export declare class DatePicker extends DatepickerCommon {
    * Defualt Value
    * @description to set default date
    * @default undefined
-   * @type Moment
+   * @type Dayjs
    */
-  defaultValue: Moment;
+  defaultValue: Dayjs;
 
   /**
    * Default Picker Value
    * @description to set default picker date
    * @default undefined
-   * @type Moment
+   * @type Dayjs
    */
-  defaultPickerValue: Moment;
+  defaultPickerValue: Dayjs;
 
   /**
    * Disabled Time
@@ -39,7 +39,7 @@ export declare class DatePicker extends DatepickerCommon {
 
   /**
    * Format
-   * @description to set the date format, refer to moment.js http://momentjs.com
+   * @description to set the date format, refer to dayjs.js http://dayjsjs.com
    * @default 'YYYY-MM-DD'
    * @type string
    */
@@ -56,7 +56,7 @@ export declare class DatePicker extends DatepickerCommon {
   /**
    * Show Time
    * @description to provide an additional time selection
-   * showTime.defaultValue to set default time of selected date - type Moment
+   * showTime.defaultValue to set default time of selected date - type Dayjs
    * --
    * @default TimePicker Options
    * @type object | boolean
@@ -75,7 +75,7 @@ export declare class DatePicker extends DatepickerCommon {
    * Value
    * @description to set date
    * @default undefined
-   * @type Moment
+   * @type Dayjs
    */
-  value: Moment;
+  value: Dayjs;
 }

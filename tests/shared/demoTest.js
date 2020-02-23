@@ -1,7 +1,7 @@
 import glob from 'glob';
 import { mount } from '@vue/test-utils';
 import MockDate from 'mockdate';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import Vue from 'vue';
 import antd from 'ant-design-vue';
 Vue.use(antd);
@@ -16,7 +16,7 @@ export default function demoTest(component, options = {}) {
       testMethod = test.skip;
     }
     testMethod(`renders ${file} correctly`, done => {
-      MockDate.set(moment('2016-11-22'));
+      MockDate.set(dayjs('2016-11-22'));
       const demo = require(`../.${file}`).default || require(`../.${file}`); // eslint-disable-line global-require, import/no-dynamic-require
       const wrapper = mount(demo, { sync: false });
       Vue.nextTick(() => {

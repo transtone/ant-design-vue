@@ -295,7 +295,7 @@
 - 🐞 修复 `TreeSelect` 没有 `dataRef` 的问题 [#712](https://github.com/vueComponent/ant-design-vue/issues/712)
 - 🌟 `Tooltip` 添加 `destroyTooltipOnHide` 用于标识隐藏后是否销毁 tooltip [#727](https://github.com/vueComponent/ant-design-vue/issues/727)
 - 🐞 修复 `Avatar` 动态设置 src 时不更新问题 [#731](https://github.com/vueComponent/ant-design-vue/issues/731)
-- 🐞 修复 `LocaleProvider` 更改 `moment` 语言不生效问题 [28b7a6](https://github.com/vueComponent/ant-design-vue/commit/28b7a68dc48a0a994e98063d462b99380e3ee547)
+- 🐞 修复 `LocaleProvider` 更改 `dayjs` 语言不生效问题 [28b7a6](https://github.com/vueComponent/ant-design-vue/commit/28b7a68dc48a0a994e98063d462b99380e3ee547)
 - 🌟 `Modal.confirm` 新增 `closable` 配置 [#798](https://github.com/vueComponent/ant-design-vue/pull/798)
 - 🐞 修复 `Select` 自定义 `dropdownRender` 时，没能自动关闭的问题 [#644](https://github.com/vueComponent/ant-design-vue/issues/644)
 - 🐞 修复在 ie9 下移除 Dom 报错问题，无需单独引入 polyfill [#705](https://github.com/vueComponent/ant-design-vue/issues/705)

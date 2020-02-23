@@ -30,7 +30,7 @@ Displaying a series of comments using the `antd` List Component.
   </a-list>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
@@ -41,7 +41,7 @@ Displaying a series of comments using the `antd` List Component.
             avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
             content:
               'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-            datetime: moment().subtract(1, 'days'),
+            datetime: dayjs().subtract(1, 'days'),
           },
           {
             actions: ['Reply to'],
@@ -49,10 +49,10 @@ Displaying a series of comments using the `antd` List Component.
             avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
             content:
               'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-            datetime: moment().subtract(2, 'days'),
+            datetime: dayjs().subtract(2, 'days'),
           },
         ],
-        moment,
+        dayjs,
       };
     },
   };

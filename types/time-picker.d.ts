@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { AntdComponent } from './component';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 
 export declare class TimePicker extends AntdComponent {
   /**
@@ -35,16 +35,16 @@ export declare class TimePicker extends AntdComponent {
 
   /**
    * default open panel value, used to set utcOffset,locale if value/defaultValue absent
-   * @default Moment
-   * @type Moment
+   * @default Dayjs
+   * @type Dayjs
    */
-  defaultOpenValue: Moment;
+  defaultOpenValue: Dayjs;
 
   /**
    * to set default time
-   * @type Moment
+   * @type Dayjs
    */
-  defaultValue: Moment;
+  defaultValue: Dayjs;
 
   /**
    * determine whether the TimePicker is disabled
@@ -156,9 +156,9 @@ export declare class TimePicker extends AntdComponent {
 
   /**
    * to set time
-   * @type Moment
+   * @type Dayjs
    */
-  value: Moment;
+  value: Dayjs;
 
   /**
    * Time picker size

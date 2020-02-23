@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import MockDate from 'mockdate';
 import {
   LocaleProvider,
@@ -136,13 +136,13 @@ const App = {
           <Option value="lucy">lucy</Option>
         </Select>
         <DatePicker open />
-        <TimePicker open defaultOpenValue={moment()} />
+        <TimePicker open defaultOpenValue={dayjs()} />
         <RangePicker open style={{ width: '200px' }} />
         <Popconfirm title="Question?" visible>
           <a>Click to confirm</a>
         </Popconfirm>
         <Transfer dataSource={[]} showSearch targetKeys={[]} render={item => item.title} />
-        <Calendar fullscreen={false} value={moment()} />
+        <Calendar fullscreen={false} value={dayjs()} />
         <Table dataSource={[]} columns={columns} />
         <Modal title="Locale Modal" visible>
           <p>Locale Modal</p>
@@ -155,7 +155,7 @@ const App = {
 describe('Locale Provider', () => {
   beforeAll(() => {
     document.body.innerHTML = '';
-    MockDate.set(moment('2017-09-18T03:30:07.795'));
+    MockDate.set(dayjs('2017-09-18T03:30:07.795'));
   });
 
   afterAll(() => {
@@ -223,7 +223,7 @@ describe('Locale Provider', () => {
     });
   });
 
-  it('set moment locale when locale changes', done => {
+  it('set dayjs locale when locale changes', done => {
     document.body.innerHTML = '';
     const Test = {
       data() {
@@ -235,7 +235,7 @@ describe('Locale Provider', () => {
         return (
           <LocaleProvider locale={this.locale}>
             <div>
-              <DatePicker defaultValue={moment()} open />
+              <DatePicker defaultValue={dayjs()} open />
             </div>
           </LocaleProvider>
         );

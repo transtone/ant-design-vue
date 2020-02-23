@@ -1,11 +1,11 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 // import { TimePickerProps } from '../time-picker'
 import PropTypes from '../_util/vue-types';
 
-export const MomentType = {
+export const DayjsType = {
   type: Object,
-  validator: function(value) {
-    return value === undefined || moment.isMoment(value);
+  validator: function (value) {
+    return value === undefined || dayjs.isDayjs(value);
   },
 };
 
@@ -28,7 +28,7 @@ export const PickerProps = () => ({
   disabledDate: PropTypes.func,
   renderExtraFooter: PropTypes.any,
   showToday: PropTypes.bool,
-  dateRender: PropTypes.any, // (current: moment.Moment, today: moment.Moment) => React.ReactNode,
+  dateRender: PropTypes.any, // (current: dayjs.Dayjs, today: dayjs.Dayjs) => React.ReactNode,
   pickerClass: PropTypes.string,
   pickerInputClass: PropTypes.string,
   timePicker: PropTypes.any,
@@ -38,10 +38,10 @@ export const PickerProps = () => ({
 });
 
 export const SinglePickerProps = () => ({
-  value: MomentType,
-  defaultValue: MomentType,
-  defaultPickerValue: MomentType,
-  // onChange?: (date: moment.Moment, dateString: string) => void;
+  value: DayjsType,
+  defaultValue: DayjsType,
+  defaultPickerValue: DayjsType,
+  // onChange?: (date: dayjs.Dayjs, dateString: string) => void;
 });
 
 export const DatePickerProps = () => ({
@@ -51,7 +51,7 @@ export const DatePickerProps = () => ({
   open: PropTypes.bool,
   disabledTime: PropTypes.func,
   // onOpenChange?: (status: bool) => void;
-  // onOk?: (selectedTime: moment.Moment) => void;
+  // onOk?: (selectedTime: dayjs.Dayjs) => void;
   placeholder: PropTypes.string,
   mode: PropTypes.oneOf(['time', 'date', 'month', 'year']),
 });
@@ -62,16 +62,16 @@ export const MonthPickerProps = () => ({
   placeholder: PropTypes.string,
   monthCellContentRender: PropTypes.func,
 });
-function isMomentArray(value) {
+function isDayjsArray(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || moment.isMoment(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
     );
   }
   return false;
 }
 
-export const RangePickerValue = PropTypes.custom(isMomentArray);
+export const RangePickerValue = PropTypes.custom(isDayjsArray);
 // export const RangePickerPresetRange = PropTypes.oneOfType([RangePickerValue, PropTypes.func])
 
 export const RangePickerProps = () => ({
@@ -81,7 +81,7 @@ export const RangePickerProps = () => ({
   defaultPickerValue: RangePickerValue,
   // onChange?: (dates: RangePickerValue, dateStrings: [string, string]) => void;
   // onCalendarChange?: (dates: RangePickerValue, dateStrings: [string, string]) => void;
-  // onOk?: (selectedTime: moment.Moment) => void;
+  // onOk?: (selectedTime: dayjs.Dayjs) => void;
   showTime: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   ranges: PropTypes.object,
   placeholder: PropTypes.arrayOf(String),

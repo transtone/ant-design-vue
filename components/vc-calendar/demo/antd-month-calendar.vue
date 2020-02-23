@@ -10,14 +10,14 @@ import BaseMixin from '@/components/_util/BaseMixin';
 
 import MonthCalendar from '../src/MonthCalendar';
 
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/en-gb';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import 'dayjs/locale/en-gb';
 
 const format = 'YYYY-MM';
 const cn = window.location.search.indexOf('cn') !== -1;
 
-const now = moment();
+const now = dayjs();
 if (cn) {
   now.locale('zh-cn').utcOffset(8);
 } else {

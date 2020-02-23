@@ -12,12 +12,12 @@ We can set presetted ranges to RangePicker to improve user experience.
 <template>
   <div>
     <a-range-picker
-      :ranges="{ Today: [moment(), moment()], 'This Month': [moment(), moment().endOf('month')] }"
+      :ranges="{ Today: [dayjs(), dayjs()], 'This Month': [dayjs(), dayjs().endOf('month')] }"
       @change="onChange"
     />
     <br />
     <a-range-picker
-      :ranges="{ Today: [moment(), moment()], 'This Month': [moment(), moment().endOf('month')] }"
+      :ranges="{ Today: [dayjs(), dayjs()], 'This Month': [dayjs(), dayjs().endOf('month')] }"
       showTime
       format="YYYY/MM/DD HH:mm:ss"
       @change="onChange"
@@ -25,7 +25,7 @@ We can set presetted ranges to RangePicker to improve user experience.
   </div>
 </template>
 <script>
-  import moment from 'moment';
+  import dayjs from 'dayjs';
   export default {
     data() {
       return {
@@ -34,7 +34,7 @@ We can set presetted ranges to RangePicker to improve user experience.
       };
     },
     methods: {
-      moment,
+      dayjs,
       onChange(dates, dateStrings) {
         console.log('From: ', dates[0], ', to: ', dates[1]);
         console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);

@@ -1,11 +1,11 @@
 <cn>
 #### 时间类控件
-时间类组件的 `value` 类型为 `moment` 对象，所以在提交服务器前需要预处理。
+时间类组件的 `value` 类型为 `dayjs` 对象，所以在提交服务器前需要预处理。
 </cn>
 
 <us>
 #### Time-related Controls
-The `value` of time-related components is a `moment` object, which we need to pre-process it before we submit to server.
+The `value` of time-related components is a `dayjs` object, which we need to pre-process it before we submit to server.
 </us>
 
 <template>
@@ -14,11 +14,7 @@ The `value` of time-related components is a `moment` object, which we need to pr
       <a-date-picker v-decorator="['date-picker', config]" />
     </a-form-item>
     <a-form-item v-bind="formItemLayout" label="DatePicker[showTime]">
-      <a-date-picker
-        v-decorator="['date-time-picker', config]"
-        show-time
-        format="YYYY-MM-DD HH:mm:ss"
-      />
+      <a-date-picker v-decorator="['date-time-picker', config]" show-time format="YYYY-MM-DD HH:mm:ss" />
     </a-form-item>
     <a-form-item v-bind="formItemLayout" label="MonthPicker">
       <a-monthPicker v-decorator="['month-picker', config]" />
@@ -27,24 +23,16 @@ The `value` of time-related components is a `moment` object, which we need to pr
       <a-range-picker v-decorator="['range-picker', rangeConfig]" />
     </a-form-item>
     <a-form-item v-bind="formItemLayout" label="RangePicker[showTime]">
-      <a-range-picker
-        v-decorator="['range-time-picker', rangeConfig]"
-        show-time
-        format="YYYY-MM-DD HH:mm:ss"
-      />
+      <a-range-picker v-decorator="['range-time-picker', rangeConfig]" show-time format="YYYY-MM-DD HH:mm:ss" />
     </a-form-item>
     <a-form-item v-bind="formItemLayout" label="TimePicker">
       <a-time-picker v-decorator="['time-picker', config]" />
     </a-form-item>
-    <a-form-item
-      :wrapper-col="{
+    <a-form-item :wrapper-col="{
         xs: { span: 24, offset: 0 },
         sm: { span: 16, offset: 8 },
-      }"
-    >
-      <a-button type="primary" html-type="submit">
-        Submit
-      </a-button>
+      }">
+      <a-button type="primary" html-type="submit">Submit</a-button>
     </a-form-item>
   </a-form>
 </template>

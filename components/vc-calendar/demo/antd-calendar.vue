@@ -11,13 +11,13 @@ import '../../vc-time-picker/assets/index.less';
 import TimePickerPanel from '../../vc-time-picker/Panel';
 import BaseMixin from '@/components/_util/BaseMixin';
 
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/en-gb';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import 'dayjs/locale/en-gb';
 
 const format = 'YYYY-MM-DD HH:mm:ss';
 const cn = window.location.search.indexOf('cn') !== -1;
-const now = moment();
+const now = dayjs();
 if (cn) {
   now.locale('zh-cn').utcOffset(8);
 } else {
@@ -31,7 +31,7 @@ function getFormat(time) {
 const defaultCalendarValue = now.clone();
 defaultCalendarValue.add(-1, 'month');
 
-const timePickerElement = h => <TimePickerPanel defaultValue={moment('00:00:00', 'HH:mm:ss')} />;
+const timePickerElement = h => <TimePickerPanel defaultValue={dayjs('00:00:00', 'HH:mm:ss')} />;
 
 function disabledTime(date) {
   console.log('disabledTime', date);
@@ -54,7 +54,7 @@ function disabledDate(current) {
     // allow empty select
     return false;
   }
-  const date = moment();
+  const date = dayjs();
   date.hour(0);
   date.minute(0);
   date.second(0);

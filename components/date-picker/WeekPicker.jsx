@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import Calendar from '../vc-calendar';
 import VcDatePicker from '../vc-calendar/src/Picker';
 import Icon from '../icon';
@@ -19,7 +19,7 @@ import { cloneElement } from '../_util/vnode';
 function formatValue(value, format) {
   return (value && value.format(format)) || '';
 }
-function noop() {}
+function noop() { }
 
 export default {
   // static defaultProps = {
@@ -43,9 +43,9 @@ export default {
   },
   data() {
     const value = this.value || this.defaultValue;
-    if (value && !interopDefault(moment).isMoment(value)) {
+    if (value && !interopDefault(dayjs).isDayjs(value)) {
       throw new Error(
-        'The value/defaultValue of DatePicker or MonthPicker must be ' + 'a moment object',
+        'The value/defaultValue of DatePicker or MonthPicker must be ' + 'a dayjs object',
       );
     }
     return {
@@ -195,8 +195,8 @@ export default {
           class: `${prefixCls}-picker-icon`,
         })
       ) : (
-        <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
-      ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
+          <span class={`${prefixCls}-picker-icon`}>{suffixIcon}</span>
+        ))) || <Icon type="calendar" class={`${prefixCls}-picker-icon`} />;
 
     const input = ({ value }) => {
       return (

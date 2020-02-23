@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 import omit from 'omit.js';
 import VcTimePicker from '../vc-time-picker';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
@@ -21,27 +21,27 @@ import { ConfigConsumerProps } from '../config-provider';
 import Base from '../base';
 
 export function generateShowHourMinuteSecond(format) {
-  // Ref: http://momentjs.com/docs/#/parsing/string-format/
+  // Ref: http://dayjsjs.com/docs/#/parsing/string-format/
   return {
     showHour: format.indexOf('H') > -1 || format.indexOf('h') > -1 || format.indexOf('k') > -1,
     showMinute: format.indexOf('m') > -1,
     showSecond: format.indexOf('s') > -1,
   };
 }
-function isMoment(value) {
+function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || moment.isMoment(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
     );
   } else {
-    return value === undefined || moment.isMoment(value);
+    return value === undefined || dayjs.isDayjs(value);
   }
 }
-const MomentType = PropTypes.custom(isMoment);
+const DayjsType = PropTypes.custom(isDayjs);
 export const TimePickerProps = () => ({
   size: PropTypes.oneOf(['large', 'default', 'small']),
-  value: MomentType,
-  defaultValue: MomentType,
+  value: DayjsType,
+  defaultValue: DayjsType,
   open: PropTypes.bool,
   format: PropTypes.string,
   disabled: PropTypes.bool,
@@ -102,8 +102,8 @@ const TimePicker = {
   },
   data() {
     const value = this.value || this.defaultValue;
-    if (value && !interopDefault(moment).isMoment(value)) {
-      throw new Error('The value/defaultValue of TimePicker must be a moment object, ');
+    if (value && !interopDefault(dayjs).isDayjs(value)) {
+      throw new Error('The value/defaultValue of TimePicker must be a dayjs object, ');
     }
     warning(
       !hasProp(this, 'allowEmpty'),
@@ -170,8 +170,8 @@ const TimePicker = {
             class: `${prefixCls}-clock-icon`,
           })
         ) : (
-          <span class={`${prefixCls}-clock-icon`}>{suffixIcon}</span>
-        ))) || <Icon type="clock-circle" class={`${prefixCls}-clock-icon`} theme="outlined" />;
+            <span class={`${prefixCls}-clock-icon`}>{suffixIcon}</span>
+          ))) || <Icon type="clock-circle" class={`${prefixCls}-clock-icon`} theme="outlined" />;
 
       return <span class={`${prefixCls}-icon`}>{clockIcon}</span>;
     },
@@ -243,7 +243,7 @@ const TimePicker = {
 };
 
 /* istanbul ignore next */
-TimePicker.install = function(Vue) {
+TimePicker.install = function (Vue) {
   Vue.use(Base);
   Vue.component(TimePicker.name, TimePicker);
 };
