@@ -13,7 +13,7 @@ Click `TimePicker`, and then we could select or input a time in panel.
   <a-time-picker @change="onChange" :defaultOpenValue="dayjs('00:00:00', 'HH:mm:ss')" />
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

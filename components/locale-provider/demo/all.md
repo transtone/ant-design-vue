@@ -58,7 +58,7 @@ Components which need localization support are listed here, you can toggle the l
   // you should use import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
   import zhCN from 'ant-design-vue/locale-provider/zh_CN';
   import { Modal } from 'ant-design-vue';
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   import 'dayjs/locale/zh-cn';
   dayjs.locale('en');
   const columns = [

@@ -1,6 +1,6 @@
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import { getComponentFromProp } from '../_util/props-util';
 import { isIE, isIE9 } from '../_util/env';
 

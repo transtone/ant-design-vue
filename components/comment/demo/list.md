@@ -30,7 +30,7 @@ Displaying a series of comments using the `antd` List Component.
   </a-list>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       return {

@@ -14,7 +14,7 @@
 </template>
 <script>
   import fr_FR from 'ant-design-vue/lib/locale-provider/fr_FR';
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   import 'dayjs/locale/fr';
 
   dayjs.locale('fr');

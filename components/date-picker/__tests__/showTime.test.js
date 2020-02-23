@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import DatePicker from '../';
 
 const { RangePicker } = DatePicker;

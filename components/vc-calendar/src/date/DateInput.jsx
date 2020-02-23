@@ -1,7 +1,7 @@
 import PropTypes from '../../../_util/vue-types';
 import BaseMixin from '../../../_util/BaseMixin';
 import { getComponentFromProp } from '../../../_util/props-util';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import { formatDate } from '../util';
 import KeyCode from '../../../_util/KeyCode';
 

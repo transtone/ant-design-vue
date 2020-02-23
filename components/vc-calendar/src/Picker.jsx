@@ -6,15 +6,15 @@ import createChainedFunction from '../../_util/createChainedFunction';
 import KeyCode from '../../_util/KeyCode';
 import placements from './picker/placements';
 import Trigger from '../../vc-trigger';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import { setTimeout } from 'timers';
 function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isMoment(val)) !== -1
     );
   } else {
-    return value === undefined || dayjs.isDayjs(value);
+    return value === undefined || dayjs.isMoment(value);
   }
 }
 const DayjsType = PropTypes.custom(isDayjs);

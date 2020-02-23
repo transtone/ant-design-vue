@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import omit from 'lodash/omit';
 import MonthCalendar from '../vc-calendar/src/MonthCalendar';
 import VcDatePicker from '../vc-calendar/src/Picker';
@@ -39,7 +39,7 @@ export default function createPicker(TheCalendar, props) {
     },
     data() {
       const value = this.value || this.defaultValue;
-      if (value && !interopDefault(dayjs).isDayjs(value)) {
+      if (value && !interopDefault(dayjs).isMoment(value)) {
         throw new Error(
           'The value/defaultValue of DatePicker or MonthPicker must be ' + 'a dayjs object',
         );

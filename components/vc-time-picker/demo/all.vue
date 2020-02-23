@@ -1,7 +1,7 @@
 <script>
 import '../assets/index.less';
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 
 import TimePicker from '../index';
 

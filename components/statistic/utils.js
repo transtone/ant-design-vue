@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import padStart from 'lodash/padStart';
 
 import interopDefault from '../_util/interopDefault';

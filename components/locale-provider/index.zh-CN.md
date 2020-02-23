@@ -14,7 +14,7 @@ LocaleProvider 使用 Vue 的 [provide/inject](https://cn.vuejs.org/v2/api/#prov
 </template>
 <script>
   import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN';
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   import 'dayjs/locale/zh-cn';
 
   dayjs.locale('zh-cn');

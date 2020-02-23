@@ -11,7 +11,7 @@ function chooseMonth(month) {
   this.setAndSelectValue(next);
 }
 
-function noop() {}
+function noop() { }
 
 const MonthTable = {
   mixins: [BaseMixin],

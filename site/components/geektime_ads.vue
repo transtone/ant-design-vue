@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 export default {
   props: ['isMobile'],
   data() {

@@ -10,7 +10,7 @@ import BaseMixin from '@/components/_util/BaseMixin';
 
 import MonthCalendar from '../src/MonthCalendar';
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/en-gb';
 

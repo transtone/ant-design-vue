@@ -17,7 +17,7 @@ The input box comes in three sizes. large is used in the form, while the medium 
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

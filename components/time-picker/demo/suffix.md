@@ -15,7 +15,7 @@ Click `TimePicker`, and then we could select or input a time in panel.
   </a-time-picker>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

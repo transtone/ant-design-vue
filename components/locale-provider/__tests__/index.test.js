@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import MockDate from 'mockdate';
 import {
   LocaleProvider,

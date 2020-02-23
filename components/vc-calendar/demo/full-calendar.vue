@@ -11,7 +11,7 @@ import FullCalendar from '@/components/vc-calendar/src/FullCalendar';
 import '@/components/vc-select/assets/index.less';
 import Select from '@/components/vc-select';
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/en-gb';
 

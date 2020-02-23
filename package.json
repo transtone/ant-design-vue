@@ -185,6 +185,7 @@
         "classnames": "^2.2.5",
         "component-classes": "^1.2.6",
         "dayjs": "^1.8.20",
+        "dayjs-with-plugins": "^0.0.3",
         "dom-align": "^1.7.0",
         "dom-closest": "^0.2.0",
         "dom-scroll-into-view": "^2.0.0",

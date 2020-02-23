@@ -13,7 +13,7 @@ A disabled state of the `TimePicker`.
   <a-time-picker :defaultValue="dayjs('12:08:23', 'HH:mm:ss')" disabled />
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

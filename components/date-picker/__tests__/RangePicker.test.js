@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import DatePicker from '../';
 import { setMockDate, resetMockDate } from '../../../tests/utils';
 import { selectDateFromBody, $$ } from './utils';

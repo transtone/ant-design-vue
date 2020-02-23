@@ -32,7 +32,7 @@ Disabled part of dates and time by `disabledDate` and `disabledTime` respectivel
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

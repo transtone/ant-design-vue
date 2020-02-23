@@ -1,23 +1,25 @@
 import DateConstants from './DateConstants';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 
 export default {
   functional: true,
   render(createElement, context) {
     const { props } = context;
     const value = props.value;
-    const localeData = value.localeData();
+    const localeData = props.value;
     const prefixCls = props.prefixCls;
     const veryShortWeekdays = [];
     const weekDays = [];
-    const firstDayOfWeek = localeData.firstDayOfWeek();
+    const firstDayOfWeek = 0;
     let showWeekNumberEl;
     const now = dayjs();
+    const weekdaysShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    const weekdaysMin = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    //  todo 替换
     for (let dateColIndex = 0; dateColIndex < DateConstants.DATE_COL_COUNT; dateColIndex++) {
       const index = (firstDayOfWeek + dateColIndex) % DateConstants.DATE_COL_COUNT;
-      now.day(index);
-      veryShortWeekdays[dateColIndex] = localeData.weekdaysMin(now);
-      weekDays[dateColIndex] = localeData.weekdaysShort(now);
+      veryShortWeekdays[dateColIndex] = weekdaysMin[index];
+      weekDays[dateColIndex] = weekdaysShort[index];
     }
 
     if (props.showWeekNumber) {

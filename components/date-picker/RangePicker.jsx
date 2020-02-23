@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import RangeCalendar from '../vc-calendar/src/RangeCalendar';
 import VcDatePicker from '../vc-calendar/src/Picker';
 import classNames from 'classnames';
@@ -85,8 +85,8 @@ export default {
     const value = this.value || this.defaultValue || [];
     const [start, end] = value;
     if (
-      (start && !interopDefault(dayjs).isDayjs(start)) ||
-      (end && !interopDefault(dayjs).isDayjs(end))
+      (start && !interopDefault(dayjs).isMoment(start)) ||
+      (end && !interopDefault(dayjs).isMoment(end))
     ) {
       throw new Error(
         'The value/defaultValue of RangePicker must be a dayjs object array after `antd@2.0`, ' +

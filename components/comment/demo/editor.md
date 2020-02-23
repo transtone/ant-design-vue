@@ -47,7 +47,7 @@ Comment can be used as editor, user can customize the editor component.
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       return {

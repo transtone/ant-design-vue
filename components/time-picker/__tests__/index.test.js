@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import VcTimePicker from '../../vc-time-picker/TimePicker';
 import TimePicker from '..';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import focusTest from '../../../tests/shared/focusTest';
 
 describe('TimePicker', () => {

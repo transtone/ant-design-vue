@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import MockDate from 'mockdate';
 import Vue from 'vue';
 

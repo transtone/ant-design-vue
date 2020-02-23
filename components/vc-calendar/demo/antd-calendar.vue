@@ -11,7 +11,7 @@ import '../../vc-time-picker/assets/index.less';
 import TimePickerPanel from '../../vc-time-picker/Panel';
 import BaseMixin from '@/components/_util/BaseMixin';
 
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/en-gb';
 

@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 
 const defaultDisabledTime = {
   disabledHours() {
@@ -14,7 +14,8 @@ const defaultDisabledTime = {
 
 export function getTodayTime(value) {
   const today = dayjs();
-  today.locale(value.locale()).utcOffset(value.utcOffset());
+  const loc = value.locale() ? value.locale() : 'en'
+  today.locale(loc).utcOffset(value.utcOffset());
   return today;
 }
 
@@ -30,11 +31,12 @@ export function getTodayTimeStr(value) {
 export function getMonthName(month) {
   const locale = month.locale();
   const localeData = month.localeData();
+  //  todo  check months
   return localeData[locale === 'zh-cn' ? 'months' : 'monthsShort'](month);
 }
 
 export function syncTime(from, to) {
-  if (!dayjs.isDayjs(from) || !dayjs.isDayjs(to)) return;
+  if (!dayjs.isMoment(from) || !dayjs.isMoment(to)) return;
   to.hour(from.hour());
   to.minute(from.minute());
   to.second(from.second());

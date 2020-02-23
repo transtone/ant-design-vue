@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import interopDefault from '../_util/interopDefault';
 import { cloneElement } from '../_util/vnode';
 import { initDefaultProps, getListeners } from '../_util/props-util';

@@ -4,7 +4,7 @@ import { getOptionProps, getListeners } from '../../../_util/props-util';
 import MonthPanel from '../month/MonthPanel';
 import YearPanel from '../year/YearPanel';
 import DecadePanel from '../decade/DecadePanel';
-function noop() {}
+function noop() { }
 function goMonth(direction) {
   const next = this.value.clone();
   next.add(direction, 'months');

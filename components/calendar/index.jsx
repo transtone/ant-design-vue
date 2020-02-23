@@ -1,7 +1,7 @@
 import PropTypes from '../_util/vue-types';
 import BaseMixin from '../_util/BaseMixin';
 import { getOptionProps, hasProp, initDefaultProps, getListeners } from '../_util/props-util';
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import FullCalendar from '../vc-calendar/src/FullCalendar';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
 import Header from './Header';
@@ -23,11 +23,11 @@ function zerofixed(v) {
 export const DayjsType = {
   type: Object,
   validator: function (value) {
-    return dayjs.isDayjs(value);
+    return dayjs.isMoment(value);
   },
 };
 function isDayjsArray(value) {
-  return Array.isArray(value) && !!value.find(val => dayjs.isDayjs(val));
+  return Array.isArray(value) && !!value.find(val => dayjs.isMoment(val));
 }
 export const CalendarMode = PropTypes.oneOf(['month', 'year']);
 
@@ -65,7 +65,7 @@ const Calendar = {
   },
   data() {
     const value = this.value || this.defaultValue || interopDefault(dayjs)();
-    if (!interopDefault(dayjs).isDayjs(value)) {
+    if (!interopDefault(dayjs).isMoment(value)) {
       throw new Error('The value/defaultValue of Calendar must be a dayjs object, ');
     }
     this._sPrefixCls = undefined;

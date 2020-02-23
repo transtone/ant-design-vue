@@ -1,11 +1,11 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 // import { TimePickerProps } from '../time-picker'
 import PropTypes from '../_util/vue-types';
 
 export const DayjsType = {
   type: Object,
   validator: function (value) {
-    return value === undefined || dayjs.isDayjs(value);
+    return value === undefined || dayjs.isMoment(value);
   },
 };
 
@@ -65,7 +65,7 @@ export const MonthPickerProps = () => ({
 function isDayjsArray(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isMoment(val)) !== -1
     );
   }
   return false;

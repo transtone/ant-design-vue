@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import PropTypes from '../../_util/vue-types';
 import BaseMixin from '../../_util/BaseMixin';
 import KeyCode from '../../_util/KeyCode';
@@ -15,7 +15,7 @@ const MonthCalendar = {
     prefixCls: PropTypes.string.def('rc-calendar'),
     monthCellRender: PropTypes.func,
     dateCellRender: PropTypes.func,
-    value: PropTypes.object,
+    value: PropTypes.any.def(dayjs()),
     defaultValue: PropTypes.object,
     selectedValue: PropTypes.object,
     defaultSelectedValue: PropTypes.object,

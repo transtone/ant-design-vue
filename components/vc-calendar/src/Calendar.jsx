@@ -3,7 +3,7 @@ import BaseMixin from '../../_util/BaseMixin';
 import { getOptionProps, hasProp, getComponentFromProp } from '../../_util/props-util';
 import { cloneElement } from '../../_util/vnode';
 import KeyCode from '../../_util/KeyCode';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import DateTable from './date/DateTable';
 import CalendarHeader from './calendar/CalendarHeader';
 import CalendarFooter from './calendar/CalendarFooter';

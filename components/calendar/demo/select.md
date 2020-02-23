@@ -27,7 +27,7 @@ A basic calendar component with Year/Month switch.
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       return {

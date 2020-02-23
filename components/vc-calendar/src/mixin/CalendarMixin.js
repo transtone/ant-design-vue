@@ -1,7 +1,7 @@
 import PropTypes from '../../../_util/vue-types';
 import BaseMixin from '../../../_util/BaseMixin';
 import { hasProp } from '../../../_util/props-util';
-import dayjs from 'dayjs';
+import Dayjs from 'dayjs';
 import { isAllowedDate, getTodayTime } from '../util/index';
 function noop() { }
 
@@ -10,17 +10,17 @@ export function getNowByCurrentStateValue(value) {
   if (value) {
     ret = getTodayTime(value);
   } else {
-    ret = dayjs();
+    ret = Dayjs();
   }
   return ret;
 }
 function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || Dayjs.isMoment(val)) !== -1
     );
   } else {
-    return value === undefined || dayjs.isDayjs(value);
+    return value === undefined || Dayjs.isMoment(value);
   }
 }
 const DayjsType = PropTypes.custom(isDayjs);

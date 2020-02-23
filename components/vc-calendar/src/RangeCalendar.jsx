@@ -7,7 +7,7 @@ import {
   getComponentFromProp,
   getListeners,
 } from '../../_util/props-util';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import KeyCode from '../../_util/KeyCode';
 import CalendarPart from './range-calendar/CalendarPart';
 import TodayButton from './calendar/TodayButton';

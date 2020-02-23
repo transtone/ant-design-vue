@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import omit from 'omit.js';
 import VcTimePicker from '../vc-time-picker';
 import LocaleReceiver from '../locale-provider/LocaleReceiver';
@@ -31,10 +31,10 @@ export function generateShowHourMinuteSecond(format) {
 function isDayjs(value) {
   if (Array.isArray(value)) {
     return (
-      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isDayjs(val)) !== -1
+      value.length === 0 || value.findIndex(val => val === undefined || dayjs.isMoment(val)) !== -1
     );
   } else {
-    return value === undefined || dayjs.isDayjs(value);
+    return value === undefined || dayjs.isMoment(value);
   }
 }
 const DayjsType = PropTypes.custom(isDayjs);
@@ -102,7 +102,7 @@ const TimePicker = {
   },
   data() {
     const value = this.value || this.defaultValue;
-    if (value && !interopDefault(dayjs).isDayjs(value)) {
+    if (value && !interopDefault(dayjs).isMoment(value)) {
       throw new Error('The value/defaultValue of TimePicker must be a dayjs object, ');
     }
     warning(

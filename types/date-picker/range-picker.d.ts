@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Dayjs } from 'dayjs';
+import { Dayjs } from 'dayjs-with-plugins';
 
 export declare class RangePicker extends DatepickerCommon {
   /**

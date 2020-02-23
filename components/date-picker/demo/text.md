@@ -23,7 +23,7 @@ Added custom rendering function, in the default `slot', you can set any componen
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       return {

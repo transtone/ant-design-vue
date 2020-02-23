@@ -13,7 +13,7 @@ While part of `format` is omitted, the corresponding column in panel will disapp
   <a-time-picker :defaultValue="dayjs('12:08', 'HH:mm')" format="HH:mm" />
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     methods: {
       dayjs,

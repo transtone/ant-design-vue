@@ -22,7 +22,7 @@ A disabled state of the `DatePicker`.
   </div>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       this.dateFormat = 'YYYY-MM-DD';

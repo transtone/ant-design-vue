@@ -1,5 +1,5 @@
 import PropTypes from '../_util/vue-types';
-import * as dayjs from 'dayjs';
+import * as dayjs from 'dayjs-with-plugins';
 import interopDefault from '../_util/interopDefault';
 import { changeConfirmLocale } from '../modal/locale';
 import Base from '../base';

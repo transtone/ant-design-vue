@@ -51,7 +51,7 @@ A basic comment with author, avatar, time and actions.
   </a-comment>
 </template>
 <script>
-  import dayjs from 'dayjs';
+  import dayjs from 'dayjs-with-plugins';
   export default {
     data() {
       return {

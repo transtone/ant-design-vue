@@ -1,4 +1,4 @@
-import Dayjs from 'dayjs';
+import Dayjs from 'dayjs-with-plugins';
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
 import MockDate from 'mockdate';
@@ -27,7 +27,7 @@ describe('Calendar', () => {
     await asyncExpect(() => {
       expect(onSelect).toBeCalledWith(expect.anything());
       const value = onSelect.mock.calls[0][0];
-      expect(Dayjs.isDayjs(value)).toBe(true);
+      expect(Dayjs.isMoment(value)).toBe(true);
     });
   });
 

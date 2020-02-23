@@ -4,7 +4,7 @@
 
 ```html
 // The default locale is en-US, if you want to use other locale, just set locale in entry file
-globally. // import dayjs from 'dayjs'; // import 'dayjs/locale/zh-cn'; //
+globally. // import dayjs from 'dayjs-with-plugins'; // import 'dayjs/locale/zh-cn'; //
 dayjs.locale('zh-cn');
 
 <a-calendar @panelChange="onPanelChange" @select="onSelect">

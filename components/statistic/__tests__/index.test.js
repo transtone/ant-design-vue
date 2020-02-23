@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { asyncExpect } from '@/tests/utils';
 import MockDate from 'mockdate';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs-with-plugins';
 import Statistic from '..';
 
 describe('Statistic', () => {

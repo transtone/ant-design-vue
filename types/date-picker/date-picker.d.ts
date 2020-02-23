@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { DatepickerCommon } from './common';
-import { Dayjs } from 'dayjs';
+import { Dayjs } from 'dayjs-with-plugins';
 import { RangePicker } from './range-picker';
 import { MonthPicker } from './month-picker';
 import { WeekPicker } from './week-picker';

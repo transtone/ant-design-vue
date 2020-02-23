@@ -3,7 +3,7 @@
 // Definitions: https://github.com/vueComponent/ant-design-vue/types
 
 import { AntdComponent } from '../component';
-import { Dayjs } from 'dayjs';
+import { Dayjs } from 'dayjs-with-plugins';
 
 export declare class DatepickerCommon extends AntdComponent {
   /**
